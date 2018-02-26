@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OdeToFood.Data;
 using OdeToFood.Models;
 using OdeToFood.Services;
 
@@ -22,7 +24,12 @@ namespace OdeToFood
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IResturantData, InMemoryResturant>();
+
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("OdeToFood")));
+
+            services.AddScoped<IResturantData, SqlResturantData>();
 
             services.AddMvc();
         }
