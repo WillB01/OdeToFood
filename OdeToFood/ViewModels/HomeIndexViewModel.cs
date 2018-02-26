@@ -8,6 +8,7 @@ namespace OdeToFood.ViewModels
 {
     public class HomeIndexViewModel
     {
-        public IEnumerable<Resturant> Resturant { get; set; }
+        public IEnumerable<Resturant> Resturants { get; set; }
+        public string CurrentMessage { get; set; }
     }
 }

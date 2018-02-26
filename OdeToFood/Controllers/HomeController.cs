@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Models;
 using OdeToFood.Services;
+using OdeToFood.ViewModels;
 
 namespace OdeToFood.Controllers
 {
@@ -18,7 +19,11 @@ namespace OdeToFood.Controllers
         }
         public IActionResult Index()
         {
-            var model = _resturnatData.GetAll();
+            var model = new HomeIndexViewModel
+            {
+                Resturants = _resturnatData.GetAll(),
+                CurrentMessage = ""
+            };
             return View(model);
         }
     }

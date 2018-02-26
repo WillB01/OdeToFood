@@ -1,10 +1,10 @@
-﻿@model IEnumerable<OdeToFood.Models.Resturant>
+﻿@model OdeToFood.ViewModels.HomeIndexViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
 <table>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Resturants)
     {
     <tr>
         <td>@item.Id</td>
