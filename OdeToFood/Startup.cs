@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OdeToFood.Models;
+using OdeToFood.Services;
 
 namespace OdeToFood
 {
@@ -20,6 +22,8 @@ namespace OdeToFood
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IResturantData, InMemoryResturant>();
+
             services.AddMvc();
         }
 

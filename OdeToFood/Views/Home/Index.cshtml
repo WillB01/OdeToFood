@@ -1,7 +1,11 @@
-﻿@model OdeToFood.Models.Resturant
+﻿@model IEnumerable<OdeToFood.Models.Resturant>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>@Model.Name</h2>
+@foreach (var item in Model)
+{
+<h1>@item.Name</h1>
+}
+
 
