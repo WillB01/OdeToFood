@@ -9,7 +9,7 @@ namespace OdeToFood.Services
 {
     public class SqlResturantData : IResturantData
     {
-        private readonly AppDbContext _appDbContext;
+        private AppDbContext _appDbContext;
 
         public SqlResturantData(AppDbContext appDbContext)
         {
