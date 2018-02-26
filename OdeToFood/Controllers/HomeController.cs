@@ -26,5 +26,11 @@ namespace OdeToFood.Controllers
             };
             return View(model);
         }
+
+        public IActionResult Details(int id)
+        {
+            var model = _resturnatData.GetById(id);
+            return View(model);
+        }
     }
 }

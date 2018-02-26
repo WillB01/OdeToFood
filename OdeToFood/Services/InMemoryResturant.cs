@@ -25,5 +25,11 @@ namespace OdeToFood.Services
         {
             return _resturants.OrderBy(r => r.Name);
         }
+
+        public Resturant GetById(int id)
+        {
+            
+            return _resturants.FirstOrDefault(r => r.Id == id);
+        }
     }
 }
