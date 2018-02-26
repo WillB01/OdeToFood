@@ -22,7 +22,7 @@ namespace OdeToFood
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IResturantData, InMemoryResturant>();
+            services.AddSingleton<IResturantData, InMemoryResturant>();
 
             services.AddMvc();
         }

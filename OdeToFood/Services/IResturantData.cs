@@ -10,5 +10,6 @@ namespace OdeToFood.Services
     {
         IEnumerable<Resturant> GetAll();
         Resturant GetById(int id);
+        Resturant Add(Resturant resturant);
     }
 }

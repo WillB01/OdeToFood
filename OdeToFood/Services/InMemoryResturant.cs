@@ -21,6 +21,14 @@ namespace OdeToFood.Services
             };
         }
 
+        public Resturant Add(Resturant resturant)
+        {
+            resturant.Id = _resturants.Max(r => r.Id) + 1;
+            _resturants.Add(resturant);
+            return resturant;
+
+        }
+
         public IEnumerable<Resturant> GetAll()
         {
             return _resturants.OrderBy(r => r.Name);
