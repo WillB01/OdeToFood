@@ -3,9 +3,14 @@
     ViewData["Title"] = "Index";
 }
 
-@foreach (var item in Model)
-{
-<h1>@item.Name</h1>
-}
+<table>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+    </tr>
+    }
+</table>
 
 
