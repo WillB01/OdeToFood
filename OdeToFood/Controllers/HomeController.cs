@@ -54,7 +54,8 @@ namespace OdeToFood.Controllers
             };
 
             NewResturant =  _resturnatData.Add(NewResturant);
-            return View("Details",NewResturant);
+            return RedirectToAction(nameof(Details),
+                new { id = NewResturant.Id });
         }
     }
 }
