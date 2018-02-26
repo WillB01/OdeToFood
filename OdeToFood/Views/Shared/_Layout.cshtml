@@ -6,8 +6,12 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <h1>k</h1>
     <div>
         @RenderBody()
     </div>
+    <footer>
+        @RenderSection("footer", required: false)
+    </footer>
 </body>
 </html>
