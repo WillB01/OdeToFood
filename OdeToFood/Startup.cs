@@ -29,6 +29,7 @@ namespace OdeToFood
                     Configuration.GetConnectionString("OdeToFood")));
 
             services.AddScoped<IResturantData, SqlResturantData>();
+            services.AddScoped<IGreeter, Greeting>();
 
             services.AddMvc();
         }
