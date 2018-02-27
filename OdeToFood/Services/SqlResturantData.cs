@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using OdeToFood.Data;
 using OdeToFood.Models;
 
@@ -31,6 +32,14 @@ namespace OdeToFood.Services
         {
             return _appDbContext.Resturants.FirstOrDefault(r => r.Id == id);
 
+        }
+
+        public Resturant Update(Resturant resturant)
+        {
+            _appDbContext.Attach(resturant).State =
+                EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return resturant;
         }
     }
 }

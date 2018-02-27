@@ -9,7 +9,12 @@
     <tr>
         <td>@item.Id</td>
         <td>@item.Name</td>
-        <td><a asp-action="Details" asp-route-id="@item.Id">More</a></td>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.Id">More</a>
+            <a asp-page="/Resturants/Edit" asp-route-id="@item.Id">Edit</a> 
+            
+        </td>
+      
     </tr>
     }
 </table>
