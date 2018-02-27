@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OdeToFood.Data;
+using OdeToFood.Middleware;
 using OdeToFood.Models;
 using OdeToFood.Services;
 
@@ -42,6 +43,8 @@ namespace OdeToFood
             }
 
             app.UseStatusCodePages();
+
+            app.UseNodeModules(env.ContentRootPath);
             app.UseStaticFiles();
             app.UseMvc(routes =>
                 routes.MapRoute(
