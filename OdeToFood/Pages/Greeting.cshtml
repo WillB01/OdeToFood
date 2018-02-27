@@ -1,4 +1,6 @@
-﻿@page
-@inject IGreeter Greeter
+﻿@page "{name?}"
+@model GreetingModel
 
-<div>@Greeter.Message</div>
+
+<div>@Model.CurrentGreeting</div>
+<h1>@Model.Name</h1>
